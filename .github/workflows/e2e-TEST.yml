@@ -96,12 +96,7 @@ jobs:
           echo "is_MY_SECRET_set: ${{ env.MY_SECRET != '' }}"
           echo "::set-output name=is_MY_SECRET_set::${{ env.MY_SECRET != '' }}"
 
-    - name: slack
-      uses: 8398a7/action-slack@v3
-      with:
-        status: ${{ job.status }}
-        fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
-      if: ${{ failure() }}
+
 
   push-image-to-dockerhub:
     runs-on: ubuntu-latest

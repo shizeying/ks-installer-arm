@@ -107,22 +107,22 @@ openpitrix_job_tag: "v3.3.2"
 openpitrix_job_repo: "{{ base_repo }}{{ namespace_override | default('kubesphere') }}/openpitrix-jobs"
 
 minio_repo: "{{ base_repo }}{{ namespace_override | default('minio') }}/minio"
-minio_tag: RELEASE.2019-08-07T01-59-21Z
+minio_tag: latest
 mc_repo: "{{ base_repo }}{{ namespace_override | default('minio') }}/mc"
-mc_tag: RELEASE.2019-08-07T23-14-43Z
+mc_tag: latest
 
 snapshot_controller_repo: "{{ base_repo }}{{ namespace_override | default('csiplugin') }}/snapshot-controller"
 snapshot_controller_tag: "v4.0.0"
 
 # ks-devops
-ks_devops_registry: "{{ base_repo }}{{ namespace_override | default('kubesphere') }}"
-ks_devops_controller_tag: "ks-{{ ks_version }}"
-ks_devops_apiserver_tag: "ks-{{ ks_version }}"
-ks_devops_tools_tag: "ks-{{ ks_version }}"
+ks_devops_registry: "{{ base_repo }}{{ namespace_override | default('kubespheredev') }}"
+ks_devops_controller_tag: "nightly-20231120"
+ks_devops_apiserver_tag: "nightly-20231120"
+ks_devops_tools_tag: "nightly-20231120"
 
 #jenkins:
 jenkins_repo: "{{ base_repo }}{{ namespace_override | default('kubesphere') }}/ks-jenkins"
-jenkins_tag: v3.4.0-2.319.3-1
+jenkins_tag: v3.5.0-2.346.3
 jnlp_slave_repo: "{{ base_repo }}{{ namespace_override | default('jenkins') }}/inbound-agent"
 jnlp_slave_tag: 4.10-2
 
@@ -156,10 +156,10 @@ s2itemplates_tag: "v3.2.0"
 #argocd
 argocd_repo: "{{ quay_image_repo }}{{ namespace_override | default('argoproj') }}/argocd"
 argocd_tag: v2.3.3
-argocd_applicationset_repo: "{{ quay_image_repo }}{{ namespace_override | default('argoproj') }}/argocd-applicationset"
-argocd_applicationset_tag: v0.4.1
-argocd_dex_repo: "{{ ghcr_image_repo }}{{ namespace_override | default('dexidp') }}/dex"
-argocd_dex_tag: v2.30.2
+argocd_applicationset_repo: "docker.io/741069229/argocd-applicationset"
+argocd_applicationset_tag: latest
+argocd_dex_repo: "docker.io/741069229/dex"
+argocd_dex_tag: v2.9.0
 argocd_redis_repo: "{{ base_library_repo }}redis"
 argocd_redis_tag: 6.2.6-alpine
 
@@ -234,16 +234,16 @@ auditing_webhook_tag: v0.2.0
 #ingress:
 nginx_ingress_controller_repo: "{{ base_repo }}{{ namespace_override | default('kubesphere') }}/nginx-ingress-controller"
 nginx_ingress_controller_tag: v1.3.1
-defaultbackend_repo: "{{ base_repo }}{{ namespace_override | default('mirrorgooglecontainers') }}/defaultbackend-amd64"
+defaultbackend_repo: "{{ base_repo }}{{ namespace_override | default('mirrorgooglecontainers') }}/defaultbackend-arm64"
 defaultbackend_tag: 1.4
 
 #metrics:
 metrics_server_repo: "{{ base_repo }}{{ namespace_override | default('kubesphere') }}/metrics-server"
-metrics_server_tag: v0.4.2
+metrics_server_tag: v0.6.1
 
 #istio
 istio_hub: "{{ base_repo }}{{ namespace_override | default('istio') }}"
-istio_tag: 1.14.6
+istio_tag: 1.17.8
 jaeger_operator_repo: "{{ base_repo }}{{ namespace_override | default('jaegertracing') }}/jaeger-operator"
 jaeger_operator_tag: 1.29
 jaeger_agent_repo: "{{ base_repo }}{{ namespace_override | default('jaegertracing') }}/jaeger-agent"
@@ -304,8 +304,8 @@ bookinfo_ratings_v1_repo: "{{ base_repo }}{{ namespace_override | default('kubes
 bookinfo_ratings_v1_tag: "{{ examples_ratings_version }}"
 
 #wave-scope
-waveworks_scop_repo: "{{ base_repo }}{{ namespace_override | default('weaveworks') }}/scope"
-waveworks_scop_tag: "1.13.0"
+waveworks_scop_repo: "{{ base_repo }}{{ namespace_override | default('odidev') }}/scope"
+waveworks_scop_tag: "latest"
 
 images:
   ks_installer:

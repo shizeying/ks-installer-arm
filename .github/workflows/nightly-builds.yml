@@ -36,12 +36,3 @@ jobs:
           tag=nightly-$(date '+%Y%m%d')
           sed -i "2idev_tag\: $tag" roles/download/defaults/main.yml
           docker buildx build --platform linux/amd64,linux/arm64 --push -f Dockerfile.complete -t $IMAGE_REPO/$IMAGE_NAME:$tag .
-
-      - name: slack
-        uses: 8398a7/action-slack@v3
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_NIGHTLY }}
-        with:
-          status: ${{ job.status }}
-          fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
-        if: ${{ failure() }}
