@@ -9,7 +9,6 @@ env:
   # TODO: Change variable to your image's name.
   IMAGE_NAME: ks-installer
   IMAGE_REPO: 741069229
-
 jobs:
   release-linux-amd64:
     runs-on: ubuntu-latest
