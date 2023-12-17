@@ -8,12 +8,12 @@ name: Build Release
 env:
   # TODO: Change variable to your image's name.
   IMAGE_NAME: ks-installer
-  IMAGE_REPO: kubesphere
+  IMAGE_REPO: 741069229
 
 jobs:
   release-linux-amd64:
     runs-on: ubuntu-latest
-    if: github.repository	== 'kubesphere/ks-installer'
+    if: github.repository	== 'shizeying/ks-installer-arm'
     steps:
       - uses: actions/checkout@v2
       - name: Get Version
